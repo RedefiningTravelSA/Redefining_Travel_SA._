@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sign Up | Redefining Travel SA</title>
+<link rel="stylesheet" href="style.css" />
+<script defer src="script.js"></script>
+</head>
+<body>
+<nav class="tabs">
+  <button data-target="tourist" class="active">Tourist</button>
+  <button data-target="host">Host</button>
+  <button data-target="learner">E-Learning</button>
+  <button data-target="waste">Waste Reporting</button>
+</nav>
+
+<section id="tourist" class="tab-content">
+  <form id="touristStep1">
+    <h2>Tourist Sign-Up</h2>
+    <input required placeholder="Full Name" />
+    <input type="email" required placeholder="Email" />
+    <input required placeholder="Contact (+CountryCode...)" />
+    <input required placeholder="Passport / SA ID" />
+    <button type="button" onclick="nextTourist()">Next: Choose Experience</button>
+  </form>
+
+  <form id="touristStep2" class="hidden">
+    <h2>Choose Your Package</h2>
+    <label>Package
+      <select id="package"></select>
+    </label>
+    <label>Date <input type="date" required /></label>
+    <label>Guests <input type="number" min="1" value="1" required /></label>
+    <label>Children? <select><option>No</option><option>Yes</option></select></label>
+
+    <h3>Payment Method</h3>
+    <select>
+      <option>EFT</option><option>Debit / Credit Card</option><option>PayPal</option>
+    </select>
+
+    <button type="submit" onclick="gotoAdmin()">Submit Booking</button>
+  </form>
+
+  <p style="text-align:center"><a href="virtual_tours.html">Preview Virtual Tours first</a></p>
+</section>
+
+<section id="host" class="tab-content hidden">
+  <form onsubmit="gotoAdmin(); return false;">
+    <h2>Host Registration</h2>
+    <input required placeholder="Full Name" />
+    <input type="email" required placeholder="Email" />
+    <input required placeholder="Contact" />
+    <input required placeholder="SA ID / Passport" />
+    <label>Experience Offered
+      <select>
+        <option>Homestay</option><option>Eco-Lodge</option><option>Craft Workshop</option>
+        <option>Dance Class</option><option>Language Lesson</option><option>Guided Nature Walk</option>
+      </select>
+    </label>
+    <label>Upload Photo (ID Selfie) <input type="file" accept="image/*" /></label>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<section id="learner" class="tab-content hidden">
+  <form onsubmit="gotoAdmin(); return false;">
+    <h2>E-Learning Application</h2>
+    <input required placeholder="Full Name" />
+    <input type="email" required placeholder="Email" />
+    <input required placeholder="Age (18+)" type="number" min="18" />
+    <label>Choose Course
+      <select>
+        <option>Hospitality Basics (2 wks)</option>
+        <option>Data Capturing for Tourism (4 wks)</option>
+        <option>Entrepreneurship 101 (5 wks)</option>
+        <option>Storytelling Workshop (3 wks)</option>
+      </select>
+    </label>
+    <textarea required placeholder="Motivation (max 200 words)"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<section id="waste" class="tab-content hidden">
+  <form onsubmit="gotoAdmin(); return false;">
+    <h2>Illegal Waste Reporting</h2>
+    <textarea required placeholder="Describe location & landmarks"></textarea>
+    <label>Upload Photo <input type="file" accept="image/*" /></label>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+</body>
+</html>

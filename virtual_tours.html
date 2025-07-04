@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Virtual Tours | Redefining Travel SA</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<h2 style="text-align:center;margin:1rem 0;">Explore Virtual Experiences</h2>
+
+<section class="grid">
+  <div class="card"><img src="storytelling.jpg" alt=""><h3>Storytelling Night</h3><p>Hear legends under African skies.</p><button onclick="selectPkg('Storytelling Night')">Choose</button></div>
+  <div class="card"><img src="games.jpg" alt=""><h3>Traditional Tswana Games</h3><p>Play morabaraba &amp; kgati with locals.</p><button onclick="selectPkg('Traditional Tswana Games')">Choose</button></div>
+  <div class="card"><img src="museum.jpg" alt=""><h3>Museum / Heritage Tour</h3><p>Discover rich Setswana history.</p><button onclick="selectPkg('Museum / Heritage Tour')">Choose</button></div>
+  <div class="card"><img src="cooking.jpg" alt=""><h3>Traditional Cooking</h3><p>Learn to make seswaa &amp; pap.</p><button onclick="selectPkg('Traditional Cooking')">Choose</button></div>
+</section>
+
+<script>
+function selectPkg(name){
+  localStorage.setItem('selectedPackage',name);
+  window.location.href='signup.html#tourist';
+}
+</script>
+</body>
+</html>
